@@ -1,0 +1,164 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+  background-image: url('bg.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* optional, for parallax effect */
+  color: #fff; /* text color to contrast */
+  position: relative;
+}
+body::before {
+  content: "";
+  position: fixed;  /* fixed taake scroll pe bhi rahe */
+  top: 0; left: 0; right: 0; bottom: 0;
+  background-color: #1a1a1aac;
+  filter: brightness(0.4); /* thoda dark kare background ko */
+  z-index: -1; /* content ke peeche rahe */
+
+}
+.custom-search {
+  padding: 5px 19px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  outline: none;
+  transition: all 0.3s ease;
+  font-size: 14px;
+}
+
+/* Jab input pe click ho (focus), tab ki styling */
+.custom-search:focus {
+  border: 1px solid #4a90e2; /* blue border */
+  box-shadow: 0 0 5px rgba(74, 144, 226, 0.5); /* soft blue glow */
+}
+.sidebar-icon {
+  cursor: pointer;
+  color: #fff;
+  font-size: 1.25rem; /* fs-5 */
+  margin: 1rem 0; /* my-4 */
+  text-decoration: none;
+}
+
+/* slider css movie */
+.movie-slider {
+  display: flex;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  gap: 20px;
+  padding-bottom: 10px;
+  /* Hide scrollbar */
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none;  /* Firefox */
+}
+.movie-slider::-webkit-scrollbar {
+  display: none;  /* Chrome, Safari, Opera */
+}
+
+.movie-card {
+  flex: 0 0 auto;
+  width: 200px;
+  height: 300px;
+  background-color: #1a1a1a;
+  border-radius: 10px;
+  overflow: hidden;
+  text-align: center;
+  transition: transform 0.3s;
+}
+.movie-card:hover {
+  transform: scale(1.05);
+}
+.movie-card img {
+  width: 100%;
+  height: 220px;
+  object-fit: cover;
+}
+.movie-card p {
+  color:#fff;
+  font-weight: bold;
+  margin: 10px 0;
+}
+
+.slider-btn {
+  width: 80px;
+  height: 80px;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: black;
+  border: none;
+  color: white;
+  font-size: 28px;
+  padding: 12px 15px;
+  border-radius: 50%;
+  cursor: pointer;
+  z-index: 1000;
+
+  transition: background-color 0.3s ease;
+}
+
+.slider-btn:hover {
+  background: white;
+  color: black;
+}
+
+.slider-btn.right {
+  right: 10px;
+}
+/* profile icon white */
+  .btn.text-light.dropdown-toggle-split::after {
+    border-top-color: white !important; /* White arrow */
+    user-select: none;
+  }
+  /* frquent icon whte */
+ .accordion-button {
+    background-color: black;
+    color: white;
+    
+  }
+
+  .accordion-button:not(.collapsed) {
+    background-color: black; /* When expanded */
+    color: white;
+  }
+
+  .accordion-button:focus {
+    box-shadow: none;
+  }
+
+.accordion-button::after {
+    filter: brightness(0) invert(1); /* White arrow */
+  }
+  .movie-card {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+   
+}
+
+.movie-image {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.play-icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 40px;
+  color: white;
+  opacity: 0;
+  visibility: hidden;
+  cursor: pointer;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.movie-card:hover .play-icon {
+  opacity: 1;
+  visibility: visible;
+}
